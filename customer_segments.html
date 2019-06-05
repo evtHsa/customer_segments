@@ -14470,9 +14470,21 @@ Sample point 2 predicted to be in Cluster 1
 <li>a test group</li>
 <li>a metric</li>
 </ul>
-<p><strong>sample group</strong> We can start by taking a sample of customers that's "large enough", but not "too large". We want enough of a sample to get meaningful results but we don't want to alienate a large portion of our customer base if the test goes poorly and we'd also like to bound the cost of the test. I'd suggest 5-10% absent real industry knowledge of typical sample sizes for A/B testing. Only customers in this group will see the reduced delivery schedule.</p>
+<p><strong>sample group</strong> There are challenges to selecting the sample group I did not address well enough in my last answer.</p>
+<ul>
+<li><p>We need a sample set that's large enough to give us a meaningful result. With only 440 samples in our dataset, this may be a challenge. By pure guestimation, and lacking any industry experience,</p>
+<ul>
+<li><p>I'd randomly pick a cluster from one of the two after dimensionality reduction and increase a circle about the center until I'd encompassed 25% of the samples in that cluster</p>
+<ul>
+<li>Then I'd randomly sample from the pool in the previous set to separate the 25% in to 12.5% for A and B sets.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>We can start by taking a sample of customers that's "large enough", but not "too large". There are severalWe want enough of a sample to get meaningful results but we don't want to alienate a large portion of our customer base if the test goes poorly and we'd also like to bound the cost of the test. I'd suggest 5-10% absent real industry knowledge of typical sample sizes for A/B testing. Only customers in this group will see the reduced delivery schedule.</p>
 <p><strong>control group</strong> everybody else</p>
-<p><strong>metric</strong> We could use supervised learning methods to create a model which predicts cluster membership(market segment). If, after the start of the experiment, our data collection shows that the customer changes cluster membership, we'd need to explain that. It might not be a bad thing. If our profit margins on milk were lower than other products and they stopped buying milk from us while increasing or at least not decreasing their purchases of our other products and we could serve more customers with the reduced delivery cadence, it would be a big win. This last is not strictly part of an A/B test but could be an exploitable consequence of a successful A/B test reducing our delivery fleet's utilization. Or, on the other hand we could sell trucks we no longer need which could yield cash and a reduced ongoing maintenance cost(Note: this implies we have or start to collect historical data)</p>
+<p><strong>metric</strong> We could use supervised learning methods to create a model which predicts cluster membership(<strong>market segment</strong>). If, after the start of the experiment, our data collection shows that the customer changes cluster membership, we'd need to explain that. It might not be a bad thing. If our profit margins on milk were lower than other products and they stopped buying milk from us while increasing or at least not decreasing their purchases of our other products and we could serve more customers with the reduced delivery cadence, it would be a big win. This last is not strictly part of an A/B test but could be an exploitable consequence of a successful A/B test reducing our delivery fleet's utilization. Or, on the other hand we could sell trucks we no longer need which could yield cash and a reduced ongoing maintenance cost(Note: this implies we have or start to collect historical data)</p>
 
 </div>
 </div>
